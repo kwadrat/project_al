@@ -6,7 +6,7 @@ CC= gcc
 CXX= c++
 DEFS =  -DUNIX=1 -DSTDC_HEADERS=1 
 LIBS = 
-PROGNAME=al
+PROGNAME=pl
 
 $(PROGNAME): $(OBJS)
 	$(CXX) $(CFLAGS) $(OBJS) -o $@
@@ -14,7 +14,7 @@ $(PROGNAME): $(OBJS)
 inoutx.o: inoutx.cpp inoutx.h masterx.h procx.h typy.h procx.h typy.h typy.h
 	$(CXX) $(CFLAGS) -c $<
 
-al.o: al.cpp typy.h bufx.h procx.h logx.h masterx.h typy.h procx.h typy.h \
+pl.o: al.cpp typy.h bufx.h procx.h logx.h masterx.h typy.h procx.h typy.h \
       typy.h bufx.h procx.h masterx.h hexx.h typy.h procx.h typy.h typy.h \
       procx.h typy.h typy.h procx.h procx.h typy.h typy.h typy.h typy.h
 	$(CXX) $(CFLAGS) -c $<
