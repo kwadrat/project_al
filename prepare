@@ -1,0 +1,1 @@
+autoconf;./configure;make clean;make prog-clean

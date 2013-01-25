@@ -1,0 +1,101 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define SZER 16
+#define CPR 80
+
+char Linia[CPR];
+char Buf[SZER];
+char Pcs[SZER]; /* Pieces - kawalki napisow */
+
+int LiczBajtow=0;
+int IleBuf = 0;
+
+/* Pokazuje w porzadnym formacie linijke tekstu na ekranie */
+void LineOut(void)
+{
+ int i;
+ unsigned char b;
+/*
+ - drukuj numer bajtu
+ - drukuj kolejne wartosci w trybie HEX
+ - drukuj wartosci w trybie ASCII
+ - koniec linii
+ - zwieksz liczbe pokazanych bajtow
+ */
+ for(i = 0; i < CPR; i++)
+ {
+  Linia[i] = ' ';
+ }
+ sprintf(Pcs, "%08x  ", LiczBajtow);
+ strncpy(Linia, Pcs, 10);
+ for(i = 0; i < IleBuf; i++)
+ {
+  sprintf(Pcs, "%02x", (unsigned char) Buf[i]);
+  strncpy(Linia + 10 + 3 * i, Pcs, 2);
+ }
+ for(i = 0; i < IleBuf; i++)
+ {
+  b = (unsigned char) Buf[i];
+  Linia[59 + i] = ((b < 32) || (b > 126)) ? '.' : b;
+ }
+ Linia[75] = '\n';
+ Linia[76] = '\0';
+ printf("%s", Linia);
+ LiczBajtow += IleBuf;
+ IleBuf = 0;
+}
+
+void KodujHex(FILE * plik)
+{
+ int ch;
+ while((ch = fgetc(plik)) != EOF)
+ {
+  Buf[IleBuf++] = ch;
+  if(IleBuf == SZER)
+  {
+   LineOut();
+  }
+ }
+ if(IleBuf > 0)
+ {
+  LineOut();
+ }
+}
+
+int main(int argc, char * argv[])
+{
+ int i;
+ if(argc == 1)
+ {
+  KodujHex(stdin);
+ }
+ else
+ {
+  if(argc == 2)
+  {
+   FILE * plik;
+   plik = fopen(argv[1], "rb");
+   if(plik != NULL)
+   {
+    KodujHex(plik);
+    fclose(plik);
+   }
+   else
+   {
+    fprintf(stderr, "Blad otwarcia pliku \"%s\" do odczytu.\n", argv[1]);
+   }
+  }
+  else
+  {
+   fprintf(stderr, "Argumenty:\n");
+   for(i = 0; i < argc; i++)
+   {
+    fprintf(stderr, "%d. \"%s\"\n", i, argv[i]);
+   }
+   fprintf(stderr, "sa zbedne.\n");
+  }
+ }
+ return 0;
+}

@@ -1,0 +1,2 @@
+clean:
+	@delete \#?.o \#?.bak \#?.lnk \#?.info al

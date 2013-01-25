@@ -1,0 +1,3 @@
+delete smakefile#?
+mkmk target=al
+type pom >>smakefile
