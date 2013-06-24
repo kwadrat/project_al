@@ -19,7 +19,7 @@ extern MasterClass TopMember;
 /* Funkcja do przetwarzania wprowadzanych z klawiatury i powtarzających
    się sekwencji analizy napisu wejściowego. Wartość zwracana: 1 - OK,
    0 - wystąpił błąd, który nie pozwala na kontynuację działania */
-int CreateChainLink(void * ogniwo, char * NazwaTypu, int * index,
+int CreateChainLink(void * ogniwo, const char * NazwaTypu, int * index,
                     int n, char * s[])
 {
  int status;
