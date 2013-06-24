@@ -16,7 +16,7 @@ MasterClass TopMember; /* Tu jest definicja jedynego członka klasy TopClass */
 
 /* Funkcja sprawdza, czy dwa ciągi są równe, nie brać pod uwagę wielkości
    liter */
-int CaseStrcmp(char * a, char * b)
+int CaseStrcmp(char * a, const char * b)
 {
  while(*a && *b)
  {
