@@ -81,7 +81,7 @@ Byte ConvTable[256];
 
 
 /* ąćęłńóśź,ż.ĄĆĘŁŃÓŚŹ,Ż. */
-Byte PolTab[NUMBER_OF_CP][18] = 
+Byte PolTab[NUMBER_OF_CP][18] =
 {
  /* ASCII */
  {'a', 'c', 'e', 'l', 'n', 'o', 's', 'z', 'z',

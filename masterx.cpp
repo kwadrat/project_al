@@ -11,7 +11,7 @@ MasterClass::MasterClass(void)
 
 MasterClass::~MasterClass(void)
 {
- 
+
 }
 
 /******************************************************************************/
@@ -39,7 +39,7 @@ ProcessClass * MasterClass::FindLastProc(void)
 /******************************************************************************/
 
 /* Tworzy i dodaje na końcu łańcucha bufor */
-/* Wartość zwrotna: NULL - wystąpił błąd, != NULL - wskaźnik do utworzonego 
+/* Wartość zwrotna: NULL - wystąpił błąd, != NULL - wskaźnik do utworzonego
    bufora */
 BufClass * MasterClass::AddBuffer(void)
 {

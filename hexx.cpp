@@ -97,7 +97,7 @@ int UnHexClass::Init(int, char *[])
 void UnHexClass::Work(void)
 {
  int ile;
- while((ile = PrevBuf->GetByteArea((Byte *)(Linia + IleWLinii), 
+ while((ile = PrevBuf->GetByteArea((Byte *)(Linia + IleWLinii),
         (IleWLinii == 0) ? 76 : 1)) > 0)
  {
   IleWLinii += ile;

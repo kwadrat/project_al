@@ -1,11 +1,11 @@
 # Generated automatically from Makefile.in by configure.
 OBJS= inoutx.o al.o catx.o plx.o bufx.o hexx.o procx.o masterx.o logx.o
 CFLAGS= -g -O2 -DLINUX
-CPPFLAGS= 
+CPPFLAGS=
 CC= gcc
 CXX= c++
-DEFS =  -DUNIX=1 -DSTDC_HEADERS=1 
-LIBS = 
+DEFS =  -DUNIX=1 -DSTDC_HEADERS=1
+LIBS =
 PROGNAME=pl
 
 $(PROGNAME): $(OBJS)

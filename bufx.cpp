@@ -13,7 +13,7 @@ BufClass::BufClass(void)
   BufEnd = BufPtr + BufLen;
   FirstDataPtr = FirstFreePtr = BufPtr;
   DataAmount = 0; /* Na razie brak danych w buforze */
-  InputState = STATE_ON; /* Bufor działa */ 
+  InputState = STATE_ON; /* Bufor działa */
  }
  else /* Brakło pamięci na utworzenie bufora */
  {

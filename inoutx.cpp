@@ -186,7 +186,7 @@ void ProcIOFileClass::Work(void)
    FILE * out;
    size_t ile;
    size_t ile2;
-   
+
    /* Przed zamknięciem pliku dokonamy przepisania treści pliku do oryginału */
    if(TopMember.NazwaPlikuIO != NULL)
    {

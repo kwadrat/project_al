@@ -10,7 +10,7 @@ class MasterClass
  char * NazwaPlikuTymczasowego;
  BufClass * AddBuffer(void);
  ProcessClass * FindLastProc(void);
- 
+
 public:
  char * NazwaPlikuIO;
  MasterClass(void);

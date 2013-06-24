@@ -14,7 +14,7 @@ protected:
 public:
  BufClass * PrevBuf;
  BufClass * NextBuf;
- 
+
  virtual void Work(void);  /* Pompa do wtłaczania danych w potok */
  virtual int Init(int, char *[]); /* Tu początek danych */
  void SignalEndOfData(void); /* Proces kończy działanie */
