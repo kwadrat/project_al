@@ -5,8 +5,8 @@
 
 OBJS= inoutx.o al.o catx.o plx.o bufx.o hexx.o procx.o masterx.o logx.o
 
-al: $(OBJS)
-   sc link to al with <<
+pl: $(OBJS)
+   sc link to pl with <<
 $(OBJS)
 <
 
@@ -43,4 +43,4 @@ logx.o: logx.cpp logx.h inoutx.h procx.h masterx.h catx.h plx.h hexx.h typy.h \
 
 
 clean:
-	@delete \#?.o \#?.bak \#?.lnk \#?.info al
+	@delete \#?.o \#?.bak \#?.lnk \#?.info pl
