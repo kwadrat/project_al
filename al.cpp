@@ -40,7 +40,7 @@ void ShowHelp(int argc, char * argv[])
  if(argc == 2)
  {
   puts(
-"Projekt AL v" THIS_PROGRAM_VERSION " (kwadrat@polsl.gliwice.pl)\n"
+"Projekt AL v" THIS_PROGRAM_VERSION " (ciri@ciri.pl)\n"
 "Program służy do przetwarzania strumienia danych. Możliwe są filtry:\n"
 "i \"plik\" - wczytanie danych z pliku,\n"
 "o \"plik\" - zapis danych do pliku,\n"
