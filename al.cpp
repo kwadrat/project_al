@@ -41,6 +41,7 @@ void ShowHelp(int argc, char * argv[])
  {
   puts(
 "Projekt AL v" THIS_PROGRAM_VERSION " (ciri@ciri.pl)\n"
+"https://github.com/kwadrat/project_al\n"
 "Program służy do przetwarzania strumienia danych. Możliwe są filtry:\n"
 "i \"plik\" - wczytanie danych z pliku,\n"
 "o \"plik\" - zapis danych do pliku,\n"
