@@ -28,7 +28,6 @@ ProcessClass::ProcessClass(void)
 ProcessClass::~ProcessClass(void)
 {
  /* Koniec działania procedury */
-
 }
 
 /******************************************************************************/
