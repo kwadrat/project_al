@@ -5,6 +5,7 @@
 
 #define HEXX_SZER 16 /* Liczba bajtów dekodowanych w jednej linii */
 #define HEXX_CPR 80 /* Wielkość buforów dla jednej linii */
+#define HEX_OFFSET 10 /* Numer kolumny z wartościami hex */
 
 
 class HexClass : public ProcessClass

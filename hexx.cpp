@@ -64,11 +64,11 @@ void HexClass::LineOut(void)
  */
  memset(Linia, ' ', HEXX_CPR);
  sprintf(Pcs, "%08x  ", LiczBajtow);
- strncpy(Linia, Pcs, 10);
+ strncpy(Linia, Pcs, HEX_OFFSET);
  for(i = 0; i < IleBuf; i++)
  {
   sprintf(Pcs, "%02x", (Byte) Buf[i]);
-  strncpy(Linia + 10 + 3 * i, Pcs, 2);
+  strncpy(Linia + HEX_OFFSET + 3 * i, Pcs, 2);
  }
  for(i = 0; i < IleBuf; i++)
  {
@@ -141,8 +141,8 @@ void UnHexClass::DecodeLine(void)
 
  for(i = 0; i < 16; i++)
  {
-  Linia[10 + 3 * i + 2] = '\0'; /* Zakończ napis - nie ma więcej znaków */
-  if(sscanf(Linia + 10 + 3 * i, "%x", & value) == 1)
+  Linia[HEX_OFFSET + 3 * i + 2] = '\0'; /* Zakończ napis - nie ma więcej znaków */
+  if(sscanf(Linia + HEX_OFFSET + 3 * i, "%x", & value) == 1)
   {
    /* Tu mamy już zdekodowaną liczbę, teraz ją wysyłamy */
    Buf[i] = (char) value;
