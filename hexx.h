@@ -4,15 +4,18 @@
 #include "procx.h"
 
 #define HEXX_SZER 16 /* Liczba bajtów dekodowanych w jednej linii */
-#define HEXX_CPR 80 /* Wielkość buforów dla jednej linii */
 #define HEX_OFFSET 10 /* Numer kolumny z wartościami hex */
+#define TXT_OFFSET ((HEX_OFFSET) + 3 * (HEXX_SZER) + 1) /* Numer kolumny z tekstową reprezentacją */
+#define NEWLINE_OFFSET (TXT_OFFSET + HEXX_SZER)
+#define ZERO_OFFSET (NEWLINE_OFFSET + 1)
+#define HEXX_CPR (ZERO_OFFSET + 1) /* Wielkość buforu dla jednej linii */
 
 
 class HexClass : public ProcessClass
 {
  char Linia[HEXX_CPR]; /* Tu tworzymy obraz linii */
  char Buf[HEXX_SZER]; /* Tu zbieramy kawałki jednej linii */
- char Pcs[HEXX_SZER]; /* Pieces - obszar roboczy do konstrukcji napisów */
+ char Pcs[HEX_OFFSET + 1]; /* Pieces - obszar roboczy do konstrukcji napisów */
  int IleBuf; /* Liczba znaków już zgromadzonych w buforze Buf */
  int LiczBajtow; /* Ile bajtów już wydrukowaliśmy */
  void LineOut(void); /* Wydrukuj treść bufora */

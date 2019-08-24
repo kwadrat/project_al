@@ -73,11 +73,11 @@ void HexClass::LineOut(void)
  for(i = 0; i < IleBuf; i++)
  {
   b = (Byte) Buf[i];
-  Linia[59 + i] = ((b < 32) || (b > 126)) ? '.' : (char) b;
+  Linia[TXT_OFFSET + i] = ((b < 32) || (b > 126)) ? '.' : (char) b;
  }
- Linia[75] = '\n';
- Linia[76] = '\0'; /* Zakończenie napisu, niepotrzebne dla bufora */
- NextBuf->PutByteArea((Byte *)Linia, 76); /* Wydruk aż do znaku LF */
+ Linia[NEWLINE_OFFSET] = '\n';
+ Linia[ZERO_OFFSET] = '\0'; /* Zakończenie napisu, niepotrzebne dla bufora */
+ NextBuf->PutByteArea((Byte *)Linia, ZERO_OFFSET); /* Wydruk aż do znaku LF */
  /* printf("%s", Linia); */
  LiczBajtow += IleBuf;
  IleBuf = 0;
