@@ -3,7 +3,7 @@
 
 #include "procx.h"
 
-#define HEXX_SZER 16 /* Liczba bajtów dekodowanych w jednej linii */
+#define HEXX_SZER HEX_SIZE /* Liczba bajtów dekodowanych w jednej linii */
 #define HEX_OFFSET 10 /* Numer kolumny z wartościami hex */
 #define TXT_OFFSET ((HEX_OFFSET) + 3 * (HEXX_SZER) + 1) /* Numer kolumny z tekstową reprezentacją */
 #define NEWLINE_OFFSET (TXT_OFFSET + HEXX_SZER)

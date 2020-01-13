@@ -1,6 +1,11 @@
 # Generated automatically from Makefile.in by configure.
 OBJS= inoutx.o al.o catx.o plx.o bufx.o hexx.o procx.o masterx.o logx.o
-CFLAGS= -g -O2 -DLINUX
+ifeq (1, 1)
+    HEX_SIZE = 36
+else
+    HEX_SIZE = 16
+endif
+CFLAGS= -g -O2 -DLINUX -DHEX_SIZE=$(HEX_SIZE)
 CPPFLAGS=
 CC= gcc
 CXX= c++
@@ -28,7 +33,7 @@ plx.o: plx.cpp plx.h procx.h typy.h
 bufx.o: bufx.cpp bufx.h typy.h typy.h procx.h typy.h
 	$(CXX) $(CFLAGS) -c $<
 
-hexx.o: hexx.cpp hexx.h procx.h typy.h
+hexx.o: hexx.cpp hexx.h procx.h typy.h Makefile
 	$(CXX) $(CFLAGS) -c $<
 
 procx.o: procx.cpp procx.h typy.h
