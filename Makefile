@@ -19,7 +19,7 @@ $(PROGNAME): $(OBJS)
 inoutx.o: inoutx.cpp inoutx.h masterx.h procx.h typy.h procx.h typy.h typy.h
 	$(CXX) $(CFLAGS) -c $<
 
-pl.o: al.cpp typy.h bufx.h procx.h logx.h masterx.h typy.h procx.h typy.h \
+pl.o: pl.cpp typy.h bufx.h procx.h logx.h masterx.h typy.h procx.h typy.h \
       typy.h bufx.h procx.h masterx.h hexx.h typy.h procx.h typy.h typy.h \
       procx.h typy.h typy.h procx.h procx.h typy.h typy.h typy.h typy.h
 	$(CXX) $(CFLAGS) -c $<

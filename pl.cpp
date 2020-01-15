@@ -60,7 +60,7 @@ void ShowHelp(int argc, char * argv[])
 "opcję \"o\" lub na początku była opcja \"io\" - wtedy dane są zapisywane\n"
 "do podanego pliku.\n"
 "   Przykład użycia programu:\n"
-"                  al i plik1 No13 pl iso a o plik2\n"
+"                  pl i plik1 No13 pl iso a o plik2\n"
 "Ten przykład usunie znaki CR, skonwertuje standard polskich\n"
 "liter ISOLatin2->AmigaPL i zapisze dane do pliku \"plik2\".\n"
 "   Podaj nazwę którejś opcji, aby się dowiedzieć czegoś więcej na ten temat."
@@ -234,7 +234,7 @@ int main(int argc, char * argv[])
 /*
  Struktura plików:
  typy.h - główne definicje i dodatki plików nagłówkowych
- al.cpp - główny moduł programu
+ pl.cpp - główny moduł programu
  bufx.cpp, bufx.h - klasa buforów
  procx.cpp, procx.h - główna klasa procesów
  logx.cpp. logx.h - klasa logiki tworząca łańcuch procesów
