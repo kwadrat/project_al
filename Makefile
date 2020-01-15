@@ -1,5 +1,5 @@
 # Generated automatically from Makefile.in by configure.
-OBJS= inoutx.o al.o catx.o plx.o bufx.o hexx.o procx.o masterx.o logx.o
+OBJS= inoutx.o pl.o catx.o plx.o bufx.o hexx.o procx.o masterx.o logx.o
 ifeq (1, 1)
     HEX_SIZE = 36
 else
