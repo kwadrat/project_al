@@ -14,7 +14,7 @@
 class HexClass : public ProcessClass
 {
  char Linia[HEXX_CPR]; /* Tu tworzymy obraz linii */
- char Buf[HEXX_SZER]; /* Tu zbieramy kawałki jednej linii */
+ char Buf_in[HEXX_SZER]; /* Tu zbieramy kawałki jednej linii */
  char Pcs[HEX_OFFSET + 1]; /* Pieces - obszar roboczy do konstrukcji napisów */
  int IleBuf; /* Liczba znaków już zgromadzonych w buforze Buf */
  int LiczBajtow; /* Ile bajtów już wydrukowaliśmy */
@@ -26,7 +26,7 @@ class HexClass : public ProcessClass
 class UnHexClass : public ProcessClass
 {
  char Linia[HEXX_CPR]; /* Tu tworzymy obraz linii */
- char Buf[HEXX_SZER]; /* Tu zbieramy znaki linii wyjściowej */
+ char Buf_out[HEXX_SZER]; /* Tu zbieramy znaki linii wyjściowej */
  int IleWLinii; /* Liczba znaków zgromadzonych w linii */
  void DecodeLine(void); /* Zamiana z ASCII na kod binarny */
  virtual int Init(int, char *[]);

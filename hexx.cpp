@@ -20,7 +20,7 @@ void HexClass::Work(void)
 {
  int ile;
 
- while((ile = PrevBuf->GetByteArea((Byte *)(Buf + IleBuf),
+ while((ile = PrevBuf->GetByteArea((Byte *)(Buf_in + IleBuf),
                                    HEXX_SZER - IleBuf)) > 0)
  {
   IleBuf += ile;
@@ -67,12 +67,12 @@ void HexClass::LineOut(void)
  strncpy(Linia, Pcs, HEX_OFFSET);
  for(i = 0; i < IleBuf; i++)
  {
-  sprintf(Pcs, "%02x", (Byte) Buf[i]);
+  sprintf(Pcs, "%02x", (Byte) Buf_in[i]);
   strncpy(Linia + HEX_OFFSET + 3 * i, Pcs, 2);
  }
  for(i = 0; i < IleBuf; i++)
  {
-  b = (Byte) Buf[i];
+  b = (Byte) Buf_in[i];
   Linia[TXT_OFFSET + i] = ((b < 32) || (b > 126)) ? '.' : (char) b;
  }
  Linia[NEWLINE_OFFSET] = '\n';
@@ -145,14 +145,14 @@ void UnHexClass::DecodeLine(void)
   if(sscanf(Linia + HEX_OFFSET + 3 * i, "%x", & value) == 1)
   {
    /* Tu mamy już zdekodowaną liczbę, teraz ją wysyłamy */
-   Buf[i] = (char) value;
+   Buf_out[i] = (char) value;
   }
   else
   {
    break; /* Koniec wczytywania - napotkaliśmy dziwny znak */
   }
  }
- NextBuf->PutByteArea((Byte *) Buf, i); /* Wyślij zebraną linię */
+ NextBuf->PutByteArea((Byte *) Buf_out, i); /* Wyślij zebraną linię */
  IleWLinii = 0; /* Nie mamy już znaków w linii */
  memset(Linia, '\0', HEXX_CPR); /* Czyścimy pamięć */
 }
