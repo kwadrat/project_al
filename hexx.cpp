@@ -152,6 +152,25 @@ void UnHexClass::DecodeLine(void)
 
 void HexClass::DescribeColumns(void)
 {
+    int i;
+    memset(Linia, ' ', HEXX_CPR);
+    sprintf(Pcs, "offset    "); /* Etykieta */
+    strncpy(Linia, Pcs, HEX_OFFSET);
+    for(i = 0; i < HEXX_SZER; i++)
+    {
+        sprintf(Pcs, "%02x", (Byte) i);
+        strncpy(Linia + HEX_OFFSET + 3 * i, Pcs, 2);
+    }
+    for(i = 0; i < HEXX_SZER; i++)
+    {
+        if(!(i % 4))
+        {
+            sprintf(Pcs, "%02x", (Byte) i);
+            strncpy(Linia + TXT_OFFSET + i, Pcs, 2);
+        }
+    }
+    Linia[NEWLINE_OFFSET] = '\n';
+    NextBuf->PutByteArea((Byte *)Linia, ZERO_OFFSET); /* Wydruk aż do znaku LF */
     Linia[0] = '\n';
     NextBuf->PutByteArea((Byte *)Linia, 1); /* Wydruk pustej linii oddzielającej nagłówek od danych */
 }
