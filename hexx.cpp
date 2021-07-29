@@ -11,6 +11,7 @@ int HexClass::Init(int, char *[])
 {
     IleBuf = 0; /* Na razie w "Buf" nie ma żadnych znaków */
     LiczBajtow = 0; /* Nie przekonwertowaliśmy jeszcze żadnych bajtów */
+    RunOnce = 1;
     return 1;
 }
 
@@ -18,6 +19,10 @@ void HexClass::Work(void)
 {
     int ile;
 
+    if(RunOnce)
+    {
+        RunOnce = 0;
+    }
     while((ile = PrevBuf->GetByteArea((Byte *)(Buf_in + IleBuf),
                    HEXX_SZER - IleBuf)) > 0)
     {

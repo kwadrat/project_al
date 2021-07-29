@@ -16,6 +16,7 @@ class HexClass : public ProcessClass
  char Linia[HEXX_CPR]; /* Tu tworzymy obraz linii */
  char Buf_in[HEXX_SZER]; /* Tu zbieramy kawałki jednej linii */
  char Pcs[HEX_OFFSET + 1]; /* Pieces - obszar roboczy do konstrukcji napisów */
+ int RunOnce; /* Dla jednokrotnego wypisania nagłówka */
  int IleBuf; /* Liczba znaków już zgromadzonych w buforze Buf */
  int LiczBajtow; /* Ile bajtów już wydrukowaliśmy */
  void LineOut(void); /* Wydrukuj treść bufora */
