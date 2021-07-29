@@ -145,5 +145,11 @@ void UnHexClass::DecodeLine(void)
     memset(Linia, '\0', HEXX_CPR); /* Czyścimy pamięć */
 }
 
+void HexClass::DescribeColumns(void)
+{
+    Linia[0] = '\n';
+    NextBuf->PutByteArea((Byte *)Linia, 1); /* Wydruk pustej linii oddzielającej nagłówek od danych */
+}
+
 #endif
 

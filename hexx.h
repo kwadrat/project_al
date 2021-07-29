@@ -19,6 +19,7 @@ class HexClass : public ProcessClass
  int IleBuf; /* Liczba znaków już zgromadzonych w buforze Buf */
  int LiczBajtow; /* Ile bajtów już wydrukowaliśmy */
  void LineOut(void); /* Wydrukuj treść bufora */
+ void DescribeColumns(void);
  virtual int Init(int, char *[]);
  virtual void Work(void);
 };
