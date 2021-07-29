@@ -14,8 +14,6 @@ int HexClass::Init(int, char *[])
     return 1;
 }
 
-/******************************************************************************/
-
 void HexClass::Work(void)
 {
     int ile;
@@ -47,8 +45,6 @@ void HexClass::Work(void)
         SignalEndOfData();
     }
 }
-
-/******************************************************************************/
 
 /* Drukuje w porządnym formacie linijkę tekstu */
 void HexClass::LineOut(void)
@@ -83,15 +79,11 @@ void HexClass::LineOut(void)
     IleBuf = 0;
 }
 
-/******************************************************************************/
-
 int UnHexClass::Init(int, char *[])
 {
     IleWLinii = 0; /* Na początku bufor jest pusty */
     return 1;
 }
-
-/******************************************************************************/
 
 /* Funkcja przekształcająca linię ASCII w plik binarny, zgodnie z "hex" */
 void UnHexClass::Work(void)
@@ -131,8 +123,6 @@ void UnHexClass::Work(void)
     }
 }
 
-/******************************************************************************/
-
 /* Funkcja próbuje dekodować linię */
 void UnHexClass::DecodeLine(void)
 {
@@ -156,8 +146,6 @@ void UnHexClass::DecodeLine(void)
     IleWLinii = 0; /* Nie mamy już znaków w linii */
     memset(Linia, '\0', HEXX_CPR); /* Czyścimy pamięć */
 }
-
-/******************************************************************************/
 
 #endif
 
