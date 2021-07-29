@@ -72,9 +72,7 @@ void HexClass::LineOut(void)
         Linia[TXT_OFFSET + i] = ((b < 32) || (b > 126)) ? '.' : (char) b;
     }
     Linia[NEWLINE_OFFSET] = '\n';
-    Linia[ZERO_OFFSET] = '\0'; /* Zakończenie napisu, niepotrzebne dla bufora */
     NextBuf->PutByteArea((Byte *)Linia, ZERO_OFFSET); /* Wydruk aż do znaku LF */
-    /* printf("%s", Linia); */
     LiczBajtow += IleBuf;
     IleBuf = 0;
 }
