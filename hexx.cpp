@@ -22,6 +22,7 @@ void HexClass::Work(void)
     if(RunOnce)
     {
         RunOnce = 0;
+        DescribeColumns();
     }
     while((ile = PrevBuf->GetByteArea((Byte *)(Buf_in + IleBuf),
                    HEXX_SZER - IleBuf)) > 0)
