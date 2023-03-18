@@ -69,7 +69,7 @@ void No13Class::Work(void)
 {
  int ile, i;
  Byte * src, * dst;
- register Byte tmp;
+ Byte tmp;
 
  while((ile = PrevBuf->GetByteArea(LocalBuf, BUF_DEFSIZE)) > 0)
  {
