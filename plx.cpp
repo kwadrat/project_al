@@ -76,10 +76,6 @@ ale następnie dodany, aby móc odróżnić "z," od "z.". */
 
 typedef unsigned char Byte;
 
-Byte ConvTable[256];
-
-
-
 /* ąćęłńóśź,ż.ĄĆĘŁŃÓŚŹ,Ż. */
 Byte PolTab[NUMBER_OF_CP][18] =
 {
