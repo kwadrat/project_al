@@ -5,6 +5,7 @@
 #include "masterx.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 
 extern MasterClass TopMember;
@@ -36,14 +37,22 @@ int ProcIFileClass::Init(int argc, char * argv[])
  status = STATE_ERROR;
  if(argc >= 2)
  {
-  plik = fopen(argv[1], "rb");
-  if(plik != NULL)
+  if(access(argv[1], F_OK) == 0)
   {
-   status = 2; /* Zużyto dwa elementy */
+   plik = fopen(argv[1], "rb");
+   if(plik != NULL)
+   {
+    status = 2; /* Zużyto dwa elementy */
+   }
+   else
+   {
+    SygError("Błąd otwarcia pliku wejściowego do odczytu.");
+   }
   }
   else
   {
-   SygError("Błąd otwarcia pliku wejściowego do odczytu.");
+    printf("Nazwa nieistniejacego pliku wejsciowego: '%s'\n", argv[1]);
+    SygError("Pliku wejściowy o podanej nazwie nie istnieje.");
   }
  }
  else
